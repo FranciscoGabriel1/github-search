@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // Isso define o diretório raiz como a base para os caminhos relativos
+    "paths": {
+      "@pages/*": ["src/pages/*"], // Define um alias para todos os arquivos dentro de src/pages
+      "@config/*": ["src/config/*"], // Define um alias para todos os arquivos dentro de src/config
+      "@components/*": ["src/components/*"] // Define um alias para todos os arquivos dentro de src/config
+    },
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
