@@ -1,8 +1,13 @@
+import { SearchContextProvider } from "@context/SearchContext";
 import "./App.css";
 import RouterProvider from "@components/Routes";
 
 function App() {
-  return <RouterProvider />;
+  return (
+    <SearchContextProvider>
+      <RouterProvider />
+    </SearchContextProvider>
+  );
 }
 
 export default App;
