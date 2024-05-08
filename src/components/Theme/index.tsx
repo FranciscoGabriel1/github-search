@@ -198,7 +198,7 @@ const palette = createPalette({
   },
 });
 
-const theme = createTheme({ palette });
+export const theme = createTheme({ palette });
 
 export const AppTheme = () =>
   createTheme({
@@ -261,20 +261,20 @@ interface PaletteColorOptions {
 }
 
 interface ShadesOfDarkPaletteOptions {
-  black: string;
-  ultraDark: string;
-  dark: string;
-  steel: string;
-  medium: string;
-  light: string;
-  ultraLight: string;
-  background: string;
-  white: string;
-  whiteLight: string;
+  black?: string;
+  ultraDark?: string;
+  dark?: string;
+  steel?: string;
+  medium?: string;
+  light?: string;
+  ultraLight?: string;
+  background?: string;
+  white?: string;
+  whiteLight?: string;
 }
 
 interface ThumbColorsPaletteOptions {
-  coral: SimplePaletteColorOptions;
+  coral?: SimplePaletteColorOptions;
   orange: SimplePaletteColorOptions;
   yellow: SimplePaletteColorOptions;
   green: SimplePaletteColorOptions;
