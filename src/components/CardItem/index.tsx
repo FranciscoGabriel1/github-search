@@ -16,7 +16,6 @@ const CardItem: React.FC<{ props: IRepository }> = ({ props }) => {
   return (
     <>
       <SimpleCard
-        width={300}
         onClick={handleModal}
         height={150}
         sx={{ display: "flex", alignItems: "center", mt: 1.2 }}

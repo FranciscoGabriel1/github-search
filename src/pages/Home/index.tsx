@@ -3,7 +3,7 @@ import ListResultSearch from "@components/ListResultSearch";
 import { useGithubSearch } from "@context/SearchContext";
 import React, { useState } from "react";
 import { UilGithubAlt } from "@iconscout/react-unicons";
-import { Grid, Typography, useTheme } from "@mui/material";
+import { Container, Typography, useTheme } from "@mui/material";
 import CustomButton, { CustomButtonVariant } from "@components/CustomButton";
 
 const Home: React.FC = () => {
@@ -16,7 +16,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <Grid>
+    <Container>
       <Typography
         fontWeight="bold"
         sx={{ color: theme.palette.shadesOfDark.black, fontSize: 30 }}
@@ -25,7 +25,8 @@ const Home: React.FC = () => {
         GitHub Search
       </Typography>
       <CustomInput
-        label="Pesquisar repositório"
+        label="Pesquisar por"
+        placeholder="O que você está procurando no GitHub?"
         value={input}
         onChange={setInput}
       />
@@ -34,7 +35,7 @@ const Home: React.FC = () => {
         onClick={handleSearch}
         type="submit"
         title="Pesquisar"
-        sx={{ width: "30%", mt: 2, mb: 2 }}
+        sx={{ width: { xs: "100%", sm: "30%" }, mt: 2, mb: 2 }}
         variant={
           isLoading
             ? CustomButtonVariant.CONTAINED_LOADING
@@ -42,7 +43,7 @@ const Home: React.FC = () => {
         }
       />
       <ListResultSearch />
-    </Grid>
+    </Container>
   );
 };
 

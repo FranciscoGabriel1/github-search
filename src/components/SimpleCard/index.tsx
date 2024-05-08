@@ -24,7 +24,7 @@ const SimpleCard: React.FC<SimpleCardProps> = ({
   const defaultStyle: SxProps<Theme> = {
     backgroundColor: "#fff",
     color: "black",
-    maxWidth: isMobile ? "90%" : "60%", // Ajuste o maxWidth para telas menores
+    maxWidth: isMobile ? "90%" : "80%",
     width,
     height,
     borderRadius: "16px",
