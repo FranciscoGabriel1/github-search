@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import { SxProps, Theme, useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 
