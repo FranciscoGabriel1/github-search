@@ -26,7 +26,7 @@ const Home: React.FC = () => {
       </Typography>
       <CustomInput
         label="Pesquisar por"
-        placeholder="O que você está procurando no GitHub?"
+        placeholder="Algo interessante no GitHub?"
         value={input}
         onChange={setInput}
       />

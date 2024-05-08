@@ -9,7 +9,7 @@ interface CustomInputProps {
   label: string;
   value: string;
   onChange: (value: string) => void;
-  placeholder: string;
+  placeholder?: string;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
