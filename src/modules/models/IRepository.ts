@@ -12,3 +12,4 @@ export interface IRepository {
   stargazers_count?: number;
   watchers_count?: number;
 }
+/*This interface shows the data structure of the repository, that is, what to expect in the response.*/

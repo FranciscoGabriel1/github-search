@@ -6,6 +6,10 @@ import SimpleCard from "@components/SimpleCard";
 import { UilBooks } from "@iconscout/react-unicons";
 import CustomAvatar from "@components/CustomAvatar";
 
+import { UilGithub } from "@iconscout/react-unicons";
+import { IconAndURL } from "@components/IconAndURL";
+import TitleAndSubtitle from "@components/TitleAndSubtitle";
+
 const CardItem: React.FC<{ props: IRepository }> = ({ props }) => {
   const [open, setOpen] = useState(false);
   const theme = useTheme();
@@ -61,20 +65,17 @@ const CardItem: React.FC<{ props: IRepository }> = ({ props }) => {
           subheader={props.owner?.id}
         />
         <CardContent>
-          <Typography variant="body2" color="text.primary">
-            {props.description || "Nenhuma descrição disponível"}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Nome: {props.full_name || "Nome não especificado"}
-          </Typography>
+          <TitleAndSubtitle
+            title="Descrição do repositório"
+            subtitle={props.description || "Não descrição disponível"}
+          />
 
-          <Typography variant="body2" color="text.secondary">
-            URL do avatar do proprietário:{" "}
-            {props.owner?.avatar_url || "Não especificado"}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            URL do repositório: {props.html_url || "URL não especificada"}
-          </Typography>
+          <TitleAndSubtitle
+            title="Nome completo do repositório"
+            subtitle={props.full_name || "Nome não especificado"}
+          />
+
+          <IconAndURL icon={<UilGithub />} url={props.html_url || "#"} />
           <Typography variant="body2" color="text.secondary">
             Contagem de stargazers:{" "}
             {props.stargazers_count || "Contagem não especificada"}
