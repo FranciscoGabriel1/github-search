@@ -12,14 +12,20 @@ const Home: React.FC = () => {
   const theme = useTheme();
 
   const handleSearch = async () => {
-    await searchRepositories(input);
+    // Retorna cedo se o input estiver vazio para evitar buscas desnecessárias
+    if (!input.trim()) return;
+    // Realiza a busca com o input não vazio
+    await searchRepositories(input.trim());
   };
 
   return (
     <Container>
       <Typography
         fontWeight="bold"
-        sx={{ color: theme.palette.shadesOfDark.black, fontSize: 30 }}
+        sx={{
+          color: theme.palette.shadesOfDark.black,
+          fontSize: { xs: 25, md: 32, sm: 25 },
+        }}
       >
         <UilGithubAlt size={30} />
         GitHub Search
@@ -29,6 +35,7 @@ const Home: React.FC = () => {
         placeholder="Algo interessante no GitHub?"
         value={input}
         onChange={setInput}
+        onSubmit={handleSearch}
       />
 
       <CustomButton

@@ -1,15 +1,13 @@
-import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
-import IconButton from "@mui/material/IconButton";
-import SearchIcon from "@mui/icons-material/Search";
-import CloseIcon from "@mui/icons-material/Close";
+import { IconButton, InputAdornment, TextField } from "@mui/material";
+import { useState } from "react";
+import { UilSearch, UilTimes } from "@iconscout/react-unicons";
 
 interface CustomInputProps {
   label: string;
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
+  onSubmit?: () => void;
 }
 
 const CustomInput: React.FC<CustomInputProps> = ({
@@ -17,6 +15,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   value,
   onChange,
   placeholder,
+  onSubmit,
 }) => {
   const [inputValue, setInputValue] = useState(value);
 
@@ -30,6 +29,12 @@ const CustomInput: React.FC<CustomInputProps> = ({
     onChange("");
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter" && onSubmit) {
+      onSubmit();
+    }
+  };
+
   return (
     <TextField
       label={label}
@@ -37,17 +42,18 @@ const CustomInput: React.FC<CustomInputProps> = ({
       value={inputValue}
       placeholder={placeholder}
       onChange={handleInputChange}
+      onKeyDown={handleKeyDown}
       fullWidth
       InputProps={{
         startAdornment: (
           <InputAdornment position="start">
-            <SearchIcon />
+            <UilSearch color="#6D7891" size={30} />
           </InputAdornment>
         ),
         endAdornment: inputValue && (
           <InputAdornment position="end">
             <IconButton onClick={clearInput} edge="end">
-              <CloseIcon />
+              <UilTimes color="#6D7891" size={30} />
             </IconButton>
           </InputAdornment>
         ),
