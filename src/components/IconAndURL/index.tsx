@@ -12,19 +12,20 @@ export const IconAndURL = ({ ...props }: IIconAndURL) => {
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
 
-  const background = isHovered
-    ? theme.palette.background.default
-    : "transparent";
+  const background = isHovered ? theme.palette.background.default : "#292841";
 
   const stackStyle: React.CSSProperties = {
     backgroundColor: background,
     padding: 0.5,
     borderRadius: 2,
     cursor: "pointer",
+    color: "white",
+    marginTop: 2,
+    display: "flex",
   };
 
   const textStyle: React.CSSProperties = {
-    color: theme.palette.text.secondary,
+    color: isHovered ? "#292841" : "#caccd2",
     fontSize: 16,
     marginLeft: "4%",
     fontFamily: "Segoe UI",
@@ -39,14 +40,20 @@ export const IconAndURL = ({ ...props }: IIconAndURL) => {
 
   return (
     <Stack
-      sx={stackStyle}
       direction="row"
+      sx={stackStyle}
       spacing={2}
       onClick={handleOnClick}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div>{props.icon}</div>
+      <div
+        style={{
+          color: isHovered ? "#292841" : "#caccd2",
+        }}
+      >
+        {props.icon}
+      </div>
       <div style={textStyle}>{props.url}</div>
     </Stack>
   );
