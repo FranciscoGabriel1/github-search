@@ -7,7 +7,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { IRepository } from "src/modules/models/IRepository";
-import CustomModal from "@components/CustomModal";
+
 import SimpleCard from "@components/SimpleCard";
 import CustomAvatar from "@components/CustomAvatar";
 import {
@@ -22,6 +22,7 @@ import {
 import { IconAndURL } from "@components/IconAndURL";
 import TitleAndSubtitle from "@components/TitleAndSubtitle";
 import { formatIsoDateToBrDateTime } from "@utils/index";
+import CustomModal from "@components/CustomModal";
 
 const CardItem: React.FC<{ props: IRepository }> = ({ props }) => {
   const [open, setOpen] = useState(false);
