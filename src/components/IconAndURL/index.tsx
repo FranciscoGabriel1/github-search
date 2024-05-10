@@ -12,7 +12,7 @@ export const IconAndURL = ({ ...props }: IIconAndURL) => {
   const theme = useTheme();
   const [isHovered, setIsHovered] = useState(false);
 
-  /*Sets the background color on hover using theme.*/
+  /*NOTE: Sets the background color on hover using theme.*/
   const background = isHovered ? theme.palette.background.default : "#292841";
 
   const stackStyle: React.CSSProperties = {
@@ -32,7 +32,7 @@ export const IconAndURL = ({ ...props }: IIconAndURL) => {
     fontFamily: "Segoe UI",
   };
 
-  /*Handles opening the URL in a new tab and triggers onClick if provided.*/
+  /*NOTE: Handles opening the URL in a new tab and triggers onClick if provided.*/
   const handleOnClick = () => {
     window.open(props.url, "_blank");
     if (props.onClick) {

@@ -29,7 +29,7 @@ const CardItem: React.FC<{ props: IRepository }> = ({ props }) => {
   const theme = useTheme();
 
   const handleModal = () => {
-    /*The function responsible for showing or closing the modal.*/
+    /*NOTE: The function responsible for showing or closing the modal.*/
     setOpen(!open);
   };
 

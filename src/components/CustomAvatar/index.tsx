@@ -35,7 +35,7 @@ const CustomAvatar: React.FC<CustomAvatarProps> = ({
         : `${name.split(" ")[0][0]}${
             name.split(" ")[1] ? name.split(" ")[1][0] : ""
           }`}
-      {/* This section is responsible for getting the initials of the name. For example, "Francisco Gabriel" gets "FG". */}
+      {/*NOTE:  This section is responsible for getting the initials of the name. For example, "Francisco Gabriel" gets "FG". */}
     </Avatar>
   );
 };
