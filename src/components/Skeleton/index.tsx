@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Skeleton from "@mui/material/Skeleton";
 
+/*NOTE: This Skeleton is available in the Material UI documentation, under the Pulsate example section. You can find it here: https://mui.com/material-ui/react-skeleton/ */
 const data = [
   {
     src: "",

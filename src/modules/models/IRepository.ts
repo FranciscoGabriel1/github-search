@@ -1,7 +1,9 @@
-/* Defines the IRepository interface, which represents the data structure for a repository on GitHub. */
-/* The request will return a lot of data, which can be seen by going to the "inspect > network" option in the browser. */
-/* I chose to display only this data in the modal. */
-/* This interface was created with the help of the tool https://transform.tools/json-to-typescript */
+/* NOTE: 
+Defines the IRepository interface, which represents the data structure for a repository on GitHub. 
+The request will return a lot of data, which can be seen by going to the "inspect > network" option in the browser. 
+I chose to display only this data in the modal.
+This interface was created with the help of the tool https://transform.tools/json-to-typescript 
+*/
 export interface IRepository {
   id?: number;
   name?: string;

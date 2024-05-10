@@ -19,16 +19,19 @@ const CustomInput: React.FC<CustomInputProps> = ({
 }) => {
   const [inputValue, setInputValue] = useState(value);
 
+  /*Handles input changes and propagates them to the parent component.*/
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
     onChange(event.target.value);
   };
 
+  /*Clears the input field.*/
   const clearInput = () => {
     setInputValue("");
     onChange("");
   };
 
+  /*Triggers submit on Enter key.*/
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Enter" && onSubmit) {
       onSubmit();

@@ -26,6 +26,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
   const { sx: buttonSxProps } = buttonProps;
   const theme = useTheme();
 
+  /*Determines the button text color based on the variant.*/
   const getColorText = () => {
     if (variant.toLowerCase().includes("contained")) {
       return "shadesOfDark.white";
@@ -40,6 +41,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
     return "shadesOfDark.black";
   };
 
+  /*Determines the button background color based on the variant*/
   const getBackgroundButton = () => {
     if (variant.toLowerCase().includes("contained")) {
       return "shadesOfDark.black";
@@ -53,6 +55,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
     return "shadesOfDark.white";
   };
 
+  /*Returns the download button color, specific to the outlined variant. */
   const getColorDownloadButton = () => {
     if (variant.toLowerCase().includes("outlined")) {
       return theme.palette.shadesOfDark.black;
@@ -60,6 +63,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
     return undefined;
   };
 
+  /* Sets the button border based on the variant*/
   const getBorder = () => {
     if (variant.toLowerCase().includes("outlined")) {
       return `1px solid ${theme.palette.shadesOfDark.black}`;
@@ -67,6 +71,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
     return `1px solid ${theme.palette.shadesOfDark.white}`;
   };
 
+  /*Determines the progress indicator color based on the variant.*/
   const getProgressColor = () => {
     if (variant.toLowerCase().includes("outlined")) {
       return theme.palette.shadesOfDark.black;
@@ -74,9 +79,12 @@ const CustomButton: React.FC<CustomButtonProps> = ({
     return theme.palette.shadesOfDark.white;
   };
 
+  /*Checks if the button is a download button.*/
   const isDownloadButton = variant.toLowerCase().includes("download");
 
-  const isLoading = variant.toLowerCase().includes("loading");
+  /*Checks if the button is in a loading state.*/ const isLoading = variant
+    .toLowerCase()
+    .includes("loading");
 
   const CustomProgress: React.FC = () => {
     return (

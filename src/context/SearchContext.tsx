@@ -3,7 +3,7 @@ import { IRepository } from "@modules/models/IRepository";
 import { GithubService } from "@modules/services/GithubService";
 import { AxiosHttpClient } from "@modules/ioc/HttpClient";
 
-/* Defines the structure of the search context, including states for repositories, loading, and search status. */
+/* NOTE: Defines the structure of the search context, including states for repositories, loading, and search status. */
 export interface ISearchContext {
   repositories: IRepository[];
   setRepositories: React.Dispatch<React.SetStateAction<IRepository[]>>;
@@ -16,17 +16,17 @@ export interface ISearchContext {
 
 const SearchContext = createContext<ISearchContext | undefined>(undefined);
 
-/* Instantiating the necessary dependencies for the search service. */
+/* NOTE: Instantiating the necessary dependencies for the search service. */
 const httpClient = new AxiosHttpClient();
 const githubService = new GithubService(httpClient);
 
 const SearchContextProvider = ({ children }: React.PropsWithChildren<{}>) => {
-  /* States to manage the list of repositories, loading state, and whether a search was made. */
+  /* NOTE: States to manage the list of repositories, loading state, and whether a search was made. */
   const [repositories, setRepositories] = useState<IRepository[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchMade, setSearchMade] = useState(false);
 
-  /* Function to search for repositories using GithubService. Updates states during the search process. */
+  /* NOTE: Function to search for repositories using GithubService. Updates states during the search process. */
   const searchRepositories = useCallback(
     async (query: string) => {
       setIsLoading(true);
@@ -43,7 +43,7 @@ const SearchContextProvider = ({ children }: React.PropsWithChildren<{}>) => {
     [setRepositories, setIsLoading, setSearchMade, githubService]
   );
 
-  /* Context provider that passes the states and search function to child components.*/
+  /* NOTE: Context provider that passes the states and search function to child components.*/
   return (
     <SearchContext.Provider
       value={{
@@ -61,7 +61,7 @@ const SearchContextProvider = ({ children }: React.PropsWithChildren<{}>) => {
   );
 };
 
-/* Custom hook to access the search context, ensuring it's used within the appropriate provider.*/
+/* NOTE: Custom hook to access the search context, ensuring it's used within the appropriate provider.*/
 const useGithubSearch = () => {
   const context = useContext(SearchContext);
   if (!context) {
