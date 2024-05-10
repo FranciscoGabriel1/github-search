@@ -12,9 +12,9 @@ const Home: React.FC = () => {
   const theme = useTheme();
 
   const handleSearch = async () => {
-    // Retorna cedo se o input estiver vazio para evitar buscas desnecessárias
+    /*NOTE: Returns early if the input is empty to avoid unnecessary searches*/
     if (!input.trim()) return;
-    // Realiza a busca com o input não vazio
+    /*NOTE: Perform the search with non-empty input*/
     await searchRepositories(input.trim());
   };
 
