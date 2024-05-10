@@ -10,7 +10,7 @@ Essa aplicação serve para busca de repositórios públicos no GitHub.
 git clone https://github.com/FranciscoGabriel1/github-search.git
 ```
 
-Após cloná-lo, acesse o projeto, instale as dependências necessárias e execute o projeto:
+Após cloná-lo, acesse o projeto, instale as dependências necessárias e execute o projeto. Você fará isso seguindo esses passos:
 
 ```js
 npm install
@@ -25,6 +25,10 @@ Caso queira executar os testes, utilize o comando:
 ```js
 npm test
 ```
+Se quiser ver o resultados dos testes de forma mais detalhada:
+```js
+npm test -- --coverage
+```
 
 # Demonstração do fluxo
 ![githubsearch](https://github.com/FranciscoGabriel1/github-search/assets/46074137/49396d34-53a5-4aaf-af23-e0827051d693)
@@ -36,4 +40,6 @@ npm test
 # Informações adicionais sobre o desenvolvimento
 - As mensagens dos commits seguem (ou tentam seguir🤭) o padrão [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/#specification)
 - Os serviços de integração com a API utilizam um padrão de desenvolvimento chamado Injeção de Dependência, técnica de padrão IoC (Inversão de Controle)
+- A extensão "Todo Tree" pode te ajudar a visualizar melhor os comentários.
+
 
